@@ -1,0 +1,37 @@
+{% extends './base.twig' %}
+
+{% block head %}
+    {{ parent() }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form action="" method="get">
+        <input type="text" value="" name="keyword">
+        <input type="submit" value="搜索">
+    </form>
+
+    <p><a href="item/manage">新建</a></p>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>内容</th>
+            <th>操作</th>
+        </tr>
+
+        {% for item in items %}
+            <tr >
+                <td>{{ item.id }}</td>
+                <td>
+                    <a href="/item/detail/{{ item.id }}" title="查看详情">{{ item.name }}</a>
+                </td>
+                <td>
+                    <a href="/item/manage/{{ item.id }}">编辑</a>
+                    <a href="/item/delete/{{ item.id }}">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+    </table>
+{% endblock %}

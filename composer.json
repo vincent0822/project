@@ -1,0 +1,11 @@
+{
+    "require": {
+        "doctrine/orm": "2.4.*",
+        "pimple/pimple": "~3.0",
+        "twig/twig": "~1.24.0",
+        "predis/predis": "*"
+    },
+    "autoload": {
+        "psr-0": {"": "dorm/"}
+    }
+}
